@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="hed" style="font-family: 'Lobster', cursive;">Rock Paper Scissor</h1>
+     <div class="main">
+        <div >
+        <button onclick="playGame('rock')">👍</button>
+        <button onclick="playGame('paper')">✋</button>
+        <button onclick="playGame('scissor')">✌️</button>
+    </div>   
+        <div >
+     <h1 id="result"></h1>
+    </div>
+    <footer> <Span>C </Span>Dhanush R</footer>
+    </div>
+     <script>
+        function playGame(playerChoice){
+            const choice=['rock','paper','scissor']
+            const computerChoice=choice[Math.floor(Math.random()*3)];
+            let result='';
+            if(playerChoice===computerChoice){
+                 result=`It's a tie! Both chose ${playerChoice}.`;
+            }
+            else if(playerChoice==='rock' && computerChoice==='scissor'){
+                result=`you Won! ${playerChoice} beats ${computerChoice}`;
+            }
+            else if(playerChoice==='scissor' && computerChoice==='rock')
+            {
+                result=`you Won! ${playerChoice} beats${computerChoice}`;
+        }
+            else if(playerChoice==='paper' && computerChoice==='rock')
+             {
+                result=`you Won!${playerChoice} beats ${computerChoice}.`;
+             }
+             else{
+                result = `You lose! ${playerChoice} beats ${computerChoice}.`;
+             }
+                document.querySelector("#result").textContent=result;
+            }
+     </script>
+</body>
+</html>
